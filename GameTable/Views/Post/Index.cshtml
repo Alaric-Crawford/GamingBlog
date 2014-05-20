@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GameTable.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Authors", "Index", "Author")
+    @Html.ActionLink("Categories", "Index", "Category")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Thumbnail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Category1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author.personalPic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timesViewed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wordKeys)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thumbnail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Category1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.personalPic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timesViewed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wordKeys)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
+        </td>
+    </tr>
+}
+
+</table>

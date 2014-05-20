@@ -1,0 +1,43 @@
+﻿@model GameTable.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Category</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dateCreated)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dateCreated)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categoryStarter)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoryStarter)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Approval)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Approval)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CategoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

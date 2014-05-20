@@ -1,0 +1,94 @@
+﻿@model GameTable.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Post</legend>
+
+        @Html.HiddenFor(model => model.PostID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Thumbnail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Thumbnail)
+            @Html.ValidationMessageFor(model => model.Thumbnail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.postedOn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.postedOn)
+            @Html.ValidationMessageFor(model => model.postedOn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryID, "Category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CategoryID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CategoryID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AuthorID, "Author")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AuthorID", String.Empty)
+            @Html.ValidationMessageFor(model => model.AuthorID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Approval)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Approval)
+            @Html.ValidationMessageFor(model => model.Approval)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.timesViewed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.timesViewed)
+            @Html.ValidationMessageFor(model => model.timesViewed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.wordKeys)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.wordKeys)
+            @Html.ValidationMessageFor(model => model.wordKeys)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

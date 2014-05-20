@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GameTable.Models.Author>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Authors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Posts", "Index", "Post")
+</p>
+<p>
+    @Html.ActionLink("Categories", "Index", "Category")
+</p>
+<table>
+    <tr>
+        <th>
+            Profile Picture
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Approval Rating
+        </th>
+        <th>
+            Number of Posts
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.personalPic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval)
+        </td>
+        <td>
+            @item.Posts.Count
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuthorID })
+            <br />
+            @Html.ActionLink("Details", "Details", new { id=item.AuthorID })
+            <br />
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuthorID })
+        </td>
+    </tr>
+}
+
+</table>

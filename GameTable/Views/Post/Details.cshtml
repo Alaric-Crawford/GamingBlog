@@ -1,0 +1,71 @@
+﻿@model GameTable.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Thumbnail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Thumbnail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.postedOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.postedOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category.Category1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category.Category1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author.personalPic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author.personalPic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Body)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Body)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Approval)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Approval)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.timesViewed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.timesViewed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.wordKeys)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.wordKeys)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PostID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

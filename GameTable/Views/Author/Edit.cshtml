@@ -1,0 +1,48 @@
+﻿@model GameTable.Models.Author
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Author</legend>
+
+        @Html.HiddenFor(model => model.AuthorID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.personalPic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.personalPic)
+            @Html.ValidationMessageFor(model => model.personalPic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        @Html.Hidden("Approval", 0)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Author")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
